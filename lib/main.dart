@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
         Dialogflow(authGoogle: authGoogle, language: Language.english);
     AIResponse aiResponse = await dialogflow.detectIntent(query);
     for (var message in aiResponse.getListMessage()) {
-      print(message);
       if (message["payload"] != null) {
         var payload = message["payload"];
         if (payload["quickReplies"] != null) {
