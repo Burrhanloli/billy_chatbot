@@ -140,6 +140,7 @@ class _MyAppState extends State<MyApp> {
         title: Text(
           "Billy Chat Bot",
         ),
+        centerTitle: true,
         backgroundColor: Colors.blue,
       ),
       body: SafeArea(
