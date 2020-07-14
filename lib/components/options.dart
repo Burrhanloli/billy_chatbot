@@ -12,12 +12,9 @@ class MessageOptions extends StatefulWidget {
 
 class _MessageOptionsState extends State<MessageOptions> {
   bool isHidden = false;
-  bool isWidgetHidden = false;
   @override
   Widget build(BuildContext context) {
-    return isWidgetHidden
-        ? SizedBox()
-        : Padding(
+    return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
@@ -60,9 +57,6 @@ class _MessageOptionsState extends State<MessageOptions> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                           onPressed: () {
-                            setState(() {
-                              isWidgetHidden = true;
-                            });
                             String value = widget.list
                                 .where((element) => element["value"] == true)
                                 .map((e) => e["text"])
