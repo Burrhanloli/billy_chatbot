@@ -19,15 +19,15 @@ class MessageQuickReplies extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: OutlineButton(
-                highlightedBorderColor: Colors.blue,
-                textColor: Colors.blue,
+                highlightedBorderColor: Theme.of(context).primaryColor,
+                textColor: Theme.of(context).primaryColor,
                 borderSide: BorderSide(
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
                 onPressed: () {
-                  notifyParent(list[index]["text"].toString());
+                  notifyParent(list[index]["text"].toString(), "QUICK_REPLIES");
                 },
                 child: Text(
                   list[index]["text"].toString(),

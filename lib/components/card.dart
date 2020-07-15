@@ -29,17 +29,19 @@ class MessageCard extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(message["text"].toString(),
                       style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold)),
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold)),
                 ),
                 Divider(
                   height: 5.0,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
                 FlatButton(
                   onPressed: () => launchURL(message["href"].toString()),
                   child: Text(message["buttonText"].toString(),
                       style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold)),
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold)),
                 )
               ],
             ),
