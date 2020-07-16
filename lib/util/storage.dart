@@ -28,10 +28,13 @@ class Storage {
     try {
       final file = await localFile;
       String body = await file.readAsString();
+      if (body.isEmpty) {
+        return jsonDecode("[]");
+      }
       return jsonDecode(body);
     } catch (e) {
       print(e);
-      return jsonDecode("{}");
+      return jsonDecode("[]");
     }
   }
 

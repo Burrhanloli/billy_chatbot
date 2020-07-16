@@ -7,11 +7,11 @@ class MessageGiphy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10.0),
-      child: Row(
-        children: <Widget>[
-          Container(
+    return Row(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Container(
             height: 200,
             width: 350,
             decoration: BoxDecoration(
@@ -25,8 +25,8 @@ class MessageGiphy extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

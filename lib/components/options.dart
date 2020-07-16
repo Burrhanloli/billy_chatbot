@@ -26,28 +26,27 @@ class _MessageOptionsState extends State<MessageOptions> {
               },
               value: option["value"],
             ),
-          isHidden
-              ? Container(
-                  width: 300,
-                  child: OutlineButton(
-                    highlightedBorderColor: Theme.of(context).primaryColor,
-                    textColor: Theme.of(context).primaryColor,
-                    borderSide: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
-                    onPressed: () {
-                      String value = widget.list
-                          .where((element) => element["value"] == true)
-                          .map((e) => e["text"])
-                          .join(", ");
-                      widget.notifyParent(value, "OPTIONS");
-                    },
-                    child: Text("Send"),
-                  ),
-                )
-              : SizedBox(),
+          if (isHidden)
+            Container(
+              width: 300,
+              child: OutlineButton(
+                highlightedBorderColor: Theme.of(context).primaryColorDark,
+                textColor: Theme.of(context).primaryColorDark,
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColorDark,
+                ),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                onPressed: () {
+                  String value = widget.list
+                      .where((element) => element["value"] == true)
+                      .map((e) => e["text"])
+                      .join(", ");
+                  widget.notifyParent(value, "OPTIONS");
+                },
+                child: Text("Send"),
+              ),
+            ),
         ],
       ),
     );

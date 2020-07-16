@@ -119,15 +119,25 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  bool isNullOrEmpty(List object) => object == null || object.length == 0;
+
   void setup() async {
-    await widget.storage.readData().then((value) => messages = value);
+    await widget.storage.readData().then((value) {
+      if (!isNullOrEmpty(value)) {
+        setState(() {
+          messages = value;
+        });
+      }
+      if (messages.length == 0) {
+        getChatBotResponse("Hello");
+      }
+    });
   }
 
   @override
   void initState() {
     super.initState();
     setup();
-    getChatBotResponse("hello");
   }
 
   @override
@@ -139,11 +149,12 @@ class _MyAppState extends State<MyApp> {
           "Billy Chat Bot",
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SafeArea(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Flexible(
                 child: ListView.builder(
@@ -155,7 +166,7 @@ class _MyAppState extends State<MyApp> {
               ),
               Divider(
                 height: 5.0,
-                color: Colors.blue,
+                color: Theme.of(context).primaryColorDark,
               ),
               if (isTextFieldHidden)
                 Container(
@@ -177,7 +188,7 @@ class _MyAppState extends State<MyApp> {
                             icon: Icon(
                               Icons.send,
                               size: 30.0,
-                              color: Colors.blue,
+                              color: Theme.of(context).primaryColorDark,
                             ),
                             onPressed: () async =>
                                 submit(messageEditingController.text)),

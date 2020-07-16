@@ -17,7 +17,7 @@ class MessageBubble extends StatelessWidget {
           radius: Radius.circular(15.0),
           color: data == 0
               ? Theme.of(context).primaryColor
-              : Theme.of(context).accentColor,
+              : Theme.of(context).primaryColorDark,
           elevation: 0.0,
           alignment: data == 0 ? Alignment.topLeft : Alignment.topRight,
           nip: data == 0 ? BubbleNip.leftBottom : BubbleNip.rightTop,

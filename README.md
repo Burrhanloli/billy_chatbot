@@ -6,6 +6,35 @@ A new Flutter project.
 
 This project is an assignment for Yellow Messenger.
 
+## Trained Value
+
+### Email
+
+Use the following emails to test as the bot is only trained for these:
+
+> burhanloli@gmail.com
+> hello@gmail.com
+> test@example.com
+> Hello@mail.com
+> hello@gmail.com
+> burhan@loli.com
+
+### Designation
+
+Use the following designations to test as the bot is only trained for these:
+
+> Manager
+> Developer
+> Backend developer
+> Frontend developer
+> Full-stack developer
+> Intern
+> Content Writer
+> CEO
+> CFO
+> HR
+> Housewife
+
 ## Screenshots
 
 <img src="/images/billy_chatbot-1.png" height="300">

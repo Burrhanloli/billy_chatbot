@@ -19,10 +19,10 @@ class MessageQuickReplies extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: OutlineButton(
-                highlightedBorderColor: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).primaryColor,
+                highlightedBorderColor: Theme.of(context).primaryColorDark,
+                textColor: Theme.of(context).primaryColorDark,
                 borderSide: BorderSide(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColorDark,
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
