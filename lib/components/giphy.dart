@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class MessageGiphy extends StatelessWidget {
@@ -19,8 +20,13 @@ class MessageGiphy extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
-              child: Image.network(
-                link,
+              child: CachedNetworkImage(
+                progressIndicatorBuilder: (context, url, progress) => Center(
+                  child: CircularProgressIndicator(
+                    value: progress.progress,
+                  ),
+                ),
+                imageUrl: link,
                 fit: BoxFit.fill,
               ),
             ),
